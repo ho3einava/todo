@@ -1,0 +1,500 @@
+:root {
+  --sl-color-primary-50: rgb(254 248 250);
+  --sl-color-primary-100: rgb(252 231 239);
+  --sl-color-primary-200: rgb(250 212 227);
+  --sl-color-primary-300: rgb(248 191 213);
+  --sl-color-primary-400: rgb(244 162 194);
+  --sl-color-primary-500: rgb(234 76 137);
+  --sl-color-primary-600: rgb(228 74 133);
+  --sl-color-primary-700: rgb(187 61 110);
+  --sl-color-primary-800: rgb(155 50 91);
+  --sl-color-primary-900: rgb(111 36 65);
+  --sl-color-primary-950: rgb(69 22 40);
+  --sl-z-index-dialog: var(--zi-default-overlay, 10000);
+  --font-face: "nunito";
+}
+@font-face {
+  font-family: "nunito";
+  src: url("../fonts/nunito-regular.woff");
+}
+body {
+  background: var(--sl-color-primary-200);
+  font-family: var(--font-face);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+.main-table {
+  width: 1200px;
+  height: 100vh;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 40px;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.title-form {
+  font-family: var(--font-face);
+  font-size: 25px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 30px;
+}
+.searchBox {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  flex-wrap: wrap;
+}
+.search-form {
+  width: 70%;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 0.1rem;
+}
+
+.search-input {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  border: none;
+}
+.search-input:focus {
+  outline: none;
+}
+.search-input::placeholder {
+  font-size: 1rem;
+
+  font-family: var(--font-face);
+}
+.main-search-input {
+  display: flex;
+}
+.search-icon {
+  font-size: 1.5rem;
+  padding: 0 5px;
+}
+.search-button {
+  width: 30%;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+}
+.search-btn {
+  width: 90%;
+  background-color: #000;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.field-main {
+  width: 100%;
+  height: 90px;
+  background-color: var(--sl-color-primary-200);
+  border-radius: 5px;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.field-title {
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-face);
+  margin: 0 30px;
+
+  width: 150px;
+}
+
+.field-title i {
+  margin-left: 1rem;
+}
+.main-items {
+  width: 100%;
+  height: 100vh;
+
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 1.5rem;
+  flex-direction: column;
+  overflow: auto;
+}
+.user-item {
+  width: 100%;
+  height: 55px;
+  border-bottom: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  gap: 90px;
+  padding: 5px 1rem;
+}
+.checkbox {
+  width: 100px;
+  height: 50px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.user-checkbox {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+.UserName {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-face);
+  display: flex;
+  justify-self: flex-start;
+  margin-left: -5rem;
+  align-items: center;
+
+  width: 250px;
+  height: auto;
+}
+.DataAdd {
+  font-size: 12;
+  font-weight: 400;
+  font-family: var(--font-face);
+  color: gray;
+
+  width: 200px;
+}
+.Size {
+  width: 6rem;
+  font-size: 12;
+  font-weight: 400;
+  font-family: var(--font-face);
+  color: gray;
+  display: flex;
+  justify-content: center;
+
+  width: 150px;
+}
+.ShareWith {
+  width: 6rem;
+  font-size: 12;
+  font-weight: 400;
+  font-family: var(--font-face);
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+
+  width: 150px;
+}
+.tools {
+  display: flex;
+  width: 120px;
+  height: 40px;
+
+  margin-left: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.tools i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.delete {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .main-table {
+    width: 85%;
+  }
+  .searchBox {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+    justify-content: flex-start;
+    padding-left: 0;
+    flex-wrap: wrap;
+
+    width: 100%;
+  }
+  .title-form {
+    font-size: 1.25rem;
+  }
+  .search-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-search-input {
+    width: 100%;
+  }
+  .search-input {
+    width: 95%;
+    height: 35px;
+
+    display: flex;
+    justify-content: flex-start;
+  }
+  .search-button {
+    width: 100%;
+    margin: 0.5rem 0;
+    align-items: center;
+  }
+  .search-btn {
+    width: 100%;
+    height: 40px;
+    font-size: 0.85rem;
+  }
+  .field-main {
+    margin-top: 4rem;
+    width: 100%;
+    height: 100px;
+  }
+  .field-title {
+    width: 100px;
+    font-size: 8px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0 2px;
+  }
+  .field-title:first-child {
+    width: 200px;
+  }
+  .field-title i {
+    margin-left: 3px;
+  }
+  .search-input::placeholder {
+    font-size: 0.85rem;
+  }
+  .user-item {
+    width: 99%;
+    height: 85px;
+    display: flex;
+    border-bottom: 1px solid gray;
+    margin-top: -20px;
+    gap: 10px;
+  }
+  .user-checkbox {
+    width: 15px;
+    height: 15px;
+  }
+  .UserName {
+    font-size: 9px;
+    font-weight: 600;
+
+    margin-left: 0;
+
+    gap: 5px;
+    width: 300px;
+    height: auto;
+    justify-content: flex-start;
+  }
+  .DataAdd {
+    font-size: 6px;
+    font-weight: 600;
+    width: 180px;
+  }
+  .Size {
+    width: 6rem;
+    font-size: 8px;
+
+    justify-content: flex-start;
+  }
+  .ShareWith {
+    width: 5.5rem;
+    font-size: 9px;
+  }
+  .tools {
+    display: flex;
+    width: 80px;
+    height: 40px;
+    gap: 3px;
+  }
+  .tools i {
+    font-size: 0.75rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 996px) {
+  .main-table {
+    width: 85%;
+  }
+  .searchBox {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    gap: 5px;
+  }
+  .search-form {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    border-radius: 5px;
+  }
+
+  .main-search-input {
+    width: 80%;
+  }
+  .search-input {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .search-button {
+    width: 30%;
+    margin: 0;
+    align-items: center;
+  }
+  .search-btn {
+    width: 100%;
+    height: 40px;
+    font-size: 1rem;
+  }
+  .field-main {
+    margin-top: 1rem;
+    width: 100%;
+    height: 100px;
+  }
+  .field-title {
+    font-size: 0.85rem;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0 5px;
+    width: 150px;
+  }
+  .field-title:first-child {
+    width: 200px;
+  }
+  .field-title i {
+    margin-left: 3px;
+  }
+  .search-input::placeholder {
+    font-size: 0.85rem;
+  }
+  .user-item {
+    width: 99%;
+    height: 55px;
+    display: flex;
+    border-bottom: 1px solid gray;
+    margin-top: -20px;
+    gap: 10px;
+  }
+  .user-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+  .UserName {
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 0rem;
+
+    gap: 5px;
+    width: 200px;
+    height: auto;
+    justify-content: flex-start;
+  }
+  .DataAdd {
+    font-size: 9px;
+    font-weight: 600;
+    width: 120px;
+  }
+  .Size {
+    width: 6rem;
+    font-size: 9px;
+
+    justify-content: flex-start;
+  }
+  .ShareWith {
+    width: 5.5rem;
+    font-size: 12px;
+  }
+  .tools {
+    display: flex;
+    width: 80px;
+    height: 40px;
+    gap: 3px;
+  }
+  .tools i {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 997px) and (max-width: 1200px) {
+  .main-table {
+    width: 85%;
+  }
+
+  .field-main {
+    margin-top: 1rem;
+    width: 100%;
+    height: 100px;
+    justify-content: space-evenly;
+  }
+  .field-title {
+    font-size: 0.85rem;
+    display: flex;
+
+    gap: 0;
+  }
+
+  .user-item {
+    width: 99%;
+
+    gap: 0;
+    justify-content: space-evenly;
+  }
+  .user-checkbox {
+    width: 18px;
+    height: 18px;
+  }
+
+  .UserName {
+    font-size: 12px;
+    font-weight: 500;
+
+    gap: 5px;
+    margin-left: 1rem;
+
+    width: 250px;
+    height: auto;
+    justify-content: flex-start;
+  }
+  .DataAdd {
+    font-size: 9px;
+    font-weight: 600;
+    width: 150px;
+  }
+}
