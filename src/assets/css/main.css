@@ -15,7 +15,7 @@
 }
 @font-face {
   font-family: "nunito";
-  src: url("../fonts/nunito-regular.woff");
+  src: url("/public/fonts/nunito-regular.woff");
 }
 body {
   background: var(--sl-color-primary-200);
