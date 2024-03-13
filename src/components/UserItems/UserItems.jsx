@@ -7,14 +7,14 @@ import SearchBox from "../../components/Todo/SearchTodo";
 import FieldTitle from "../Todo/FieldTitle";
 
 const UserItems = () => {
-  const { todos, getData, error } = useContext(TodoContext);
+  const { todos, getTodo, error } = useContext(TodoContext);
 
   useEffect(() => {
     const FetchData = async () => {
-      await getData();
+      await getTodo();
     };
     FetchData();
-  }, [getData]);
+  }, [getTodo]);
 
   return (
     <div>

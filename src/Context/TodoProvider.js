@@ -9,7 +9,7 @@ const TodoProvider = ({ children }) => {
     error: null,
   };
   const [state, dispatch] = useReducer(TodoReducer, initialState);
-  const { getData, UpdateTodo, removeTodo, modalTodo, search, sort } =
+  const { getTodo, updateTodo, removeTodo, modalTodo, search, sort } =
     useTodoApi({
       dispatch,
       initialState,
@@ -19,8 +19,8 @@ const TodoProvider = ({ children }) => {
     <TodoContext.Provider
       value={{
         ...state,
-        getData,
-        UpdateTodo,
+        getTodo,
+        updateTodo,
         removeTodo,
         modalTodo,
         search,

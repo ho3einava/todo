@@ -32,18 +32,7 @@ const TodoReducer = (state, action) => {
         ...state,
       };
     }
-    case "SEARCH_TODO": {
-      return {
-        ...state,
-        todos: state.todos,
-      };
-    }
-    case "SORT_TODO": {
-      return {
-        ...state,
-        todos: state.todos,
-      };
-    }
+    
 
     default:
       return state;

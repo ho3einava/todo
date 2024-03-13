@@ -3,18 +3,18 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const useTodoApi = ({ dispatch }) => {
-  const getData = useCallback(async () => {
+  const getTodo = useCallback(async () => {
     try {
-      const res = await axios.get("https://jsonplaceholder.typicode.com/todos");
-      dispatch({ type: "SET_TODOS", payload: res.data });
+      const response = await axios.get("https://jsonplaceholder.typicode.com/todos");
+      dispatch({ type: "SET_TODOS", payload: response.data });
     } catch (err) {
       dispatch({ type: "SET_ERROR", payload: err.message });
     }
   }, [dispatch]);
 
-  const UpdateTodo = async (todos) => {
+  const updateTodo = async (todos) => {
     try {
-      const res = await axios.put(
+      const response = await axios.put(
         `https://jsonplaceholder.typicode.com/todos/${todos.id}`,
         {
           title: todos.title,
@@ -22,7 +22,7 @@ const useTodoApi = ({ dispatch }) => {
         }
       );
 
-      dispatch({ type: "UPDATE_TODOS", payload: res.data });
+      dispatch({ type: "UPDATE_TODOS", payload: response.data });
       dispatch({ type: "SET_ERROR", payload: null });
       Swal.fire({
         title: `Todo ${todos.id} is Updated!`,
@@ -64,11 +64,11 @@ const useTodoApi = ({ dispatch }) => {
 
   const modalTodo = async (todo) => {
     try {
-      const res = await axios.get(
+      const response = await axios.get(
         `https://jsonplaceholder.typicode.com/todos/${todo.id}`
       );
 
-      dispatch({ type: "MODAL_TODOS", payload: res.data });
+      dispatch({ type: "MODAL_TODOS", payload: response.data });
       dispatch({ type: "SET_ERROR", payload: null });
       Swal.fire({
         title: ` <h4> ID : ${todo.id}</h4>
@@ -122,7 +122,7 @@ const useTodoApi = ({ dispatch }) => {
     }
   };
 
-  return { getData, UpdateTodo, removeTodo, modalTodo, search, sort };
+  return { getTodo, updateTodo, removeTodo, modalTodo, search, sort };
 };
 
 export default useTodoApi;

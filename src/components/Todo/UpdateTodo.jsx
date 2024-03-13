@@ -3,15 +3,15 @@ import TodoContext from "../../Context/TodoContext";
 const UpdateTodos = ({ todo }) => {
   // const [completed, setCompleted] = useState(todo.completed);
   const [loading, setloading] = useState(false);
-  const { UpdateTodo } = useContext(TodoContext);
+  const { updateTodo } = useContext(TodoContext);
   const handleCheckboxChange = async () => {
     setloading(true);
-    await UpdateTodo(todo);
+    await updateTodo(todo);
     setloading(false);
   };
   return (
-    <div>  
-      {loading && <div className="spinner-border spinner-border-sm me-2"></div>}
+    <div className="spinner">  
+      {loading && <div className="spinner-border spinner-border-sm me-3"></div>}
       <input
         type="checkbox"
         className="userCheckbox"
