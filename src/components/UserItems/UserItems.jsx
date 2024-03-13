@@ -20,7 +20,7 @@ const UserItems = () => {
     <div>
       <SearchBox todos={todos} />
       <FieldTitle />
-      {error && <h3>{error.mesaage}</h3>}
+      {error && <h3>{error.message}</h3>}
       {todos &&
         todos.map((todo) => (
           <div className="userItem" key={todo.id}>

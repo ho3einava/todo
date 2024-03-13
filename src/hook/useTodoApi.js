@@ -1,7 +1,5 @@
 import { useCallback } from "react";
 import axios from "axios";
-import Swal from "sweetalert2";
-
 const useTodoApi = ({ dispatch }) => {
   const getTodo = useCallback(async () => {
     try {
@@ -24,15 +22,7 @@ const useTodoApi = ({ dispatch }) => {
 
       dispatch({ type: "UPDATE_TODOS", payload: response.data });
       dispatch({ type: "SET_ERROR", payload: null });
-      Swal.fire({
-        title: `Todo ${todos.id} is Updated!`,
-        icon: "success",
-        showConfirmButton: false,
-        timerProgressBar: true,
-        timer: 4000,
-        toast: true,
-        position: "top-right",
-      });
+      
     } catch (err) {
       dispatch({ type: "SET_ERROR", payload: err.message });
       dispatch({ type: "UPDATE_TODOS", payload: [] });
@@ -47,15 +37,7 @@ const useTodoApi = ({ dispatch }) => {
 
       dispatch({ type: "REMOVE_TODOS", payload: todoId });
       dispatch({ type: "SET_ERROR", payload: null });
-      Swal.fire({
-        title: `Todo ${todoId} is Removed!`,
-        icon: "error",
-        showConfirmButton: false,
-        timerProgressBar: true,
-        timer: 4000,
-        toast: true,
-        position: "top-right",
-      });
+     
     } catch (err) {
       dispatch({ type: "SET_ERROR", payload: err.message });
       dispatch({ type: "REMOVE_TODOS", payload: [] });
@@ -70,14 +52,7 @@ const useTodoApi = ({ dispatch }) => {
 
       dispatch({ type: "MODAL_TODOS", payload: response.data });
       dispatch({ type: "SET_ERROR", payload: null });
-      Swal.fire({
-        title: ` <h4> ID : ${todo.id}</h4>
-            <h5>  Title : ${todo.title} </h5>  
-            <h5>  Compeleted : ${todo.completed} </h5> `,
-        icon: "success",
-        showConfirmButton: true,
-        timerProgressBar: false,
-      });
+      
     } catch (err) {
       dispatch({ type: "SET_ERROR", payload: err.message });
       dispatch({ type: "MODAL_TODOS", payload: [] });

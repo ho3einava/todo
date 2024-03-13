@@ -1,11 +1,19 @@
 import { useContext } from "react";
 import TodoContext from "../../Context/TodoContext";
-
+import Swal from "sweetalert2";
 const ModalTodo = ({ todo }) => {
   const { modalTodo } = useContext(TodoContext);
 
   const FetchData = async () => {
     await modalTodo(todo);
+    Swal.fire({
+      title: ` <h4> ID : ${todo.id}</h4>
+          <h5>  Title : ${todo.title} </h5>  
+          <h5>  Compeleted : ${todo.completed} </h5> `,
+      icon: "success",
+      showConfirmButton: true,
+      timerProgressBar: false,
+    });
   };
 
   return (
