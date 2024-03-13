@@ -38,6 +38,13 @@ const TodoReducer = (state, action) => {
         todos: state.todos,
       };
     }
+    case "SORT_TODO": {
+      return {
+        ...state,
+        todos: state.todos,
+      };
+    }
+
     default:
       return state;
   }

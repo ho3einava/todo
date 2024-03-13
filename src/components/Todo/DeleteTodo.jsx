@@ -10,10 +10,10 @@ const DeleteTodo = ({ todoId }) => {
     setloading(false);
   };
   return (
-    <>
+    <div>
       <i onClick={() => handleDelete()} className="bi bi-trash"></i>
       {loading && <div className="spinner-border spinner-border-sm me-2"></div>}
-    </>
+    </div>
   );
 };
 export default DeleteTodo;

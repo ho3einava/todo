@@ -10,15 +10,15 @@ const UpdateTodos = ({ todo }) => {
     setloading(false);
   };
   return (
-    <>
+    <div>  
       {loading && <div className="spinner-border spinner-border-sm me-2"></div>}
       <input
         type="checkbox"
-        className="user-checkbox"
+        className="userCheckbox"
         checked={todo.completed}
         onChange={() => handleCheckboxChange()}
       ></input>
-    </>
+      </div>
   );
 };
 

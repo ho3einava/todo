@@ -1,8 +1,10 @@
 import { useContext, useEffect } from "react";
 import TodoContext from "../../Context/TodoContext";
-import UpdateTodos from "../Todos/Update";
-import DeleteTodo from "../Todos/Delete";
-import ModalUser from "../Todos/ModalUser";
+import UpdateTodo from "../Todo/UpdateTodo";
+import DeleteTodo from "../Todo/DeleteTodo";
+import ModalTodo from "../Todo/ModalTodo";
+import SearchBox from "../../components/Todo/SearchTodo";
+import FieldTitle from "../Todo/FieldTitle";
 
 const UserItems = () => {
   const { todos, getData, error } = useContext(TodoContext);
@@ -15,20 +17,22 @@ const UserItems = () => {
   }, [getData]);
 
   return (
-    <>
+    <div>
+      <SearchBox todos={todos} />
+      <FieldTitle />
       {error && <h3>{error.mesaage}</h3>}
       {todos &&
         todos.map((todo) => (
-          <div className="user-item" key={todo.id}>
-            <div className="checkbox">
-              <UpdateTodos todo={todo} />
+          <div className="userItem" key={todo.id}>
+            <div className="checkBox">
+              <UpdateTodo todo={todo} />
             </div>
 
-            <ModalUser todo={todo} key={todo.id} />
+            <ModalTodo todo={todo} key={todo.id} />
 
-            <div className="DataAdd">21 December 2022</div>
-            <div className="Size">20MB</div>
-            <div className="ShareWith">1 user</div>
+            <div className="dataAdd">{todo.id} December 2022</div>
+            <div className="size">{todo.id}MB</div>
+            <div className="shareWith">{todo.id} user</div>
             <div className="tools">
               <i className="bi bi-file-arrow-down"></i>
               <i className="bi bi-bookmark-plus"></i>
@@ -38,7 +42,7 @@ const UserItems = () => {
             </div>
           </div>
         ))}
-    </>
+    </div>
   );
 };
 export default UserItems;

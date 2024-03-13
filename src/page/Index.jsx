@@ -1,17 +1,21 @@
-import Title from "../components/Title";
+
+import TitleTodo from "../components/TitleTodo";
+
 import UserLists from "../components/UserLists";
 
-const Index = () => {
-  return (
-    <>
-      <div className="main">
-        <div className="main-table">
-          <Title />
 
+const Index = () => {
+  
+  return (
+    <div>
+      <div className="main">
+        <div className="mainTable">
+          <TitleTodo />
+          
           <UserLists />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

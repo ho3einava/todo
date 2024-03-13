@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import TodoContext from "../../Context/TodoContext";
 
-const Modal = ({ todo }) => {
+const ModalTodo = ({ todo }) => {
   const { modalTodo } = useContext(TodoContext);
 
   const FetchData = async () => {
@@ -9,11 +9,11 @@ const Modal = ({ todo }) => {
   };
 
   return (
-    <>
-      <div type="button" onClick={() => FetchData()} className="UserName">
+    <div>
+      <div type="button" onClick={() => FetchData()} className="userName">
         {todo.completed ? <del>{todo.title}</del> : <span>{todo.title}</span>}
       </div>
-    </>
+    </div>
   );
 };
-export default Modal;
+export default ModalTodo;
